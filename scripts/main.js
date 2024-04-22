@@ -25,8 +25,11 @@ myButton.onclick = function ()
 function setUserName()
 {
     var myName = prompt("Введи имя.");
-    localStorage.setItem("name", myName);
-    myHeading.textContent = "Привет, " + myName;
+    if (myName !== null)
+    {
+        localStorage.setItem("name", myName);
+        myHeading.textContent = "Привет, " + myName;
+    }
 };
 
 if (!localStorage.getItem("name"))
